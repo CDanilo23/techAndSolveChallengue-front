@@ -1,0 +1,43 @@
+<br>
+<br>
+<br>
+<br>
+
+<section *ngIf="vuelos" class="panel-body">
+
+	<div id="content2">
+
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th scope="col">Codigo</th>
+					<th scope="col">Origen</th>
+					<th scope="col">Destino</th>
+					<th scope="col">Precio</th>
+					<th scope="col">Fecha Vuelo</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="table-active" *ngFor="let vuelo of vuelos">
+					<td>
+            <a href="#" [routerLink]="['/reservar', vuelo]">{{vuelo.id}} </a>
+            <button type="button" (click) = "redirectToReservar(vuelo)" >Reservar</button>	
+					</td>
+					<td>
+						<a>{{vuelo.codigo}} </a>
+					</td>
+					<td>
+						<a>{{vuelo.origen}} </a>
+          </td>
+          <td>
+						<a>{{vuelo.destino}} </a>
+					</td>
+					<td align="center">
+						<!--	<button class="btn btn-primary" type="button" (click)="selectedBook(book)">Buy</button>-->
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</section>
